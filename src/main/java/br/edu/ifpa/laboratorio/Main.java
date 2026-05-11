@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Criando o leitor do teclado
+
         Scanner teclado = new Scanner(System.in);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
@@ -30,12 +30,12 @@ public class Main {
         System.out.print("▶ Digite a Matrícula: ");
         String matricula = teclado.nextLine();
 
-        System.out.println(); // Pula uma linha para organizar
+        System.out.println();
 
 
         System.out.print("▶ Digite o ID do Equipamento (Ex: 1 para Monitor): ");
         int idEquipamento = teclado.nextInt();
-        teclado.nextLine(); // Limpa o "Enter" novamente
+        teclado.nextLine();
 
         System.out.print("▶ Digite o Nome do Equipamento: ");
         String nomeEquipamento = teclado.nextLine();

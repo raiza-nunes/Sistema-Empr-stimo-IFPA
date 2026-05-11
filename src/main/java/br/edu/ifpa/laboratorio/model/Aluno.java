@@ -5,17 +5,17 @@ public class Aluno {
     private String nome;
     private String matricula;
 
-    // Construtor vazio (obrigatório para frameworks e bancos de dados)
+
     public Aluno() {}
 
-    // Construtor com parâmetros
+
     public Aluno(int id, String nome, String matricula) {
         this.id = id;
         this.nome = nome;
         this.matricula = matricula;
     }
 
-    // Getters e Setters
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
