@@ -238,10 +238,13 @@ Durante o desenvolvimento foram utilizados conceitos importantes de engenharia d
 
 
 
----
+
 
 #  Autor
+
 Raiza Nunes
+
+---
 
 Projeto desenvolvido para fins acadêmicos e aprimoramento de conhecimentos em:
 
