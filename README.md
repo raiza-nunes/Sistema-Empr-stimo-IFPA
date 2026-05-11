@@ -91,7 +91,7 @@ Gerencia os equipamentos disponíveis para empréstimo.
 - Mouse
 - Monitor
 - Teclado
-- Headset
+- Webcam
 
 ---
 
@@ -153,9 +153,7 @@ A modelagem do sistema foi documentada utilizando diagramas UML para representar
 
 Representa as interações entre os usuários e o sistema.
 
-<p align="center">
-  <img src="./diagramas/caso_de_uso.png" width="700"/>
-</p>
+![Diagrama de Casos de Uso](UseCase%20Diagram0.png)
 
 ---
 
@@ -163,9 +161,7 @@ Representa as interações entre os usuários e o sistema.
 
 Mostra a estrutura das classes, atributos, métodos e relacionamentos utilizados no sistema.
 
-<p align="center">
-  <img src="./diagramas/diagrama_classes.png" width="700"/>
-</p>
+![Diagrama de Classes](Class%20Diagram0.png)
 
 ---
 
@@ -173,9 +169,7 @@ Mostra a estrutura das classes, atributos, métodos e relacionamentos utilizados
 
 Representa o fluxo de execução das operações do sistema durante um empréstimo.
 
-<p align="center">
-  <img src="./diagramas/diagrama_sequencia.png" width="700"/>
-</p>
+![Diagrama de Sequência](Sequence%20Diagram0.png)
 
 ---
 
