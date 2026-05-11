@@ -7,44 +7,61 @@ import br.edu.ifpa.laboratorio.model.Equipamento;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Configuração visual do Relatório
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        // Criando o leitor do teclado
+        Scanner teclado = new Scanner(System.in);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
 
-        System.out.println("   SISTEMA DE EMPRÉSTIMO-IFPA   ");
-        System.out.println("Iniciando processo de registro de empréstimo...\n");
 
-        // 1. Definição dos Dados (Simulando a Raiza pegando uma Webcam)
-        Aluno aluno = new Aluno(1, "Raiza da Costa Nunes", "20260001");
+        System.out.println("    SISTEMA DE EMPRÉSTIMO INTERATIVO       \n");
 
-        // Vamos testar com a Webcam (ID 5 na nossa lista simplificada)
-        Equipamento equipamento = new Equipamento(5, "Webcam", true);
 
-        // 2. Montagem do Objeto de Empréstimo
+
+        System.out.print("▶ Digite o ID do Aluno (Ex: 1, 2, 3...): ");
+        int idAluno = teclado.nextInt();
+        teclado.nextLine();
+
+        System.out.print("▶ Digite o Nome do Aluno: ");
+        String nomeAluno = teclado.nextLine();
+
+        System.out.print("▶ Digite a Matrícula: ");
+        String matricula = teclado.nextLine();
+
+        System.out.println(); // Pula uma linha para organizar
+
+
+        System.out.print("▶ Digite o ID do Equipamento (Ex: 1 para Monitor): ");
+        int idEquipamento = teclado.nextInt();
+        teclado.nextLine(); // Limpa o "Enter" novamente
+
+        System.out.print("▶ Digite o Nome do Equipamento: ");
+        String nomeEquipamento = teclado.nextLine();
+
+
+        Aluno aluno = new Aluno(idAluno, nomeAluno, matricula);
+        Equipamento equipamento = new Equipamento(idEquipamento, nomeEquipamento, true);
+
         Emprestimo emprestimo = new Emprestimo();
         emprestimo.setAluno(aluno);
         emprestimo.setEquipamento(equipamento);
         emprestimo.setDataEmprestimo(new Date());
         emprestimo.setStatus("ATIVO");
 
-        // 3. Execução da Persistência no MySQL via DAO
-        EmprestimoDAO emprestimoDAO = new EmprestimoDAO();
-        emprestimoDAO.salvar(emprestimo);
 
-        // 4. GUIA DE TUDO QUE FOI FEITO (Relatório Final)
-        System.out.println("\n----------------------------------------------------");
-        System.out.println("          GUIA DE RESUMO DA OPERAÇÃO                ");
-        System.out.println("----------------------------------------------------");
-        System.out.println("SOLICITANTE: " + aluno.getNome());
-        System.out.println("MATRÍCULA:   " + aluno.getMatricula());
-        System.out.println("EQUIPAMENTO: " + equipamento.getNome());
-        System.out.println("DATA/HORA:   " + sdf.format(emprestimo.getDataEmprestimo()));
-        System.out.println("STATUS INICIAL: Disponível");
-        System.out.println("STATUS FINAL:   Emprestado (Indisponível no Banco)");
-        System.out.println("SITUAÇÃO:    " + emprestimo.getStatus());
-        System.out.println("----------------------------------------------------");
-        System.out.println("Processo finalizado com sucesso no MySQL!");
+        System.out.println("\n⏳ Processando e salvando no Banco de Dados...");
+        EmprestimoDAO dao = new EmprestimoDAO();
+        dao.salvar(emprestimo);
+
+
+        System.out.println("\n[ ✅ SUCESSO! EMPRÉSTIMO REGISTRADO ]");
+        System.out.printf("Solicitante: %s\nItem: %s\nData: %s\n",
+                aluno.getNome(), equipamento.getNome(), sdf.format(emprestimo.getDataEmprestimo()));
+        System.out.println("===========================================");
+
+
+        teclado.close();
     }
 }
