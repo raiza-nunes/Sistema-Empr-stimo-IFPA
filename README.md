@@ -4,7 +4,7 @@
   <img src="https://img.shields.io/badge/Java-25-orange?style=for-the-badge&logo=openjdk" />
   <img src="https://img.shields.io/badge/MySQL-8.0-blue?style=for-the-badge&logo=mysql" />
   <img src="https://img.shields.io/badge/JDBC-Banco%20de%20Dados-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/ASTAH-MODELAGEM%20UML-blueviolet?style=for-the-badge" alt="Astah UML" />
 </p>
 
 ---
